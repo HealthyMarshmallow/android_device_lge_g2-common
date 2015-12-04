@@ -110,6 +110,10 @@ PRODUCT_PACKAGES += \
 # Gello
 PRODUCT_PACKAGES += \
     Gello
+    
+# QuickCircle Case App
+PRODUCT_PACKAGES += \
+    QuickCircle
 
 # GPS
 PRODUCT_PACKAGES += \
