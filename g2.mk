@@ -217,4 +217,4 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bc
 
 # Glove mode
 PRODUCT_PACKAGES += \
-    DeviceSettings
+    GloveMode
