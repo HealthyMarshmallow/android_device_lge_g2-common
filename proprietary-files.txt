@@ -205,10 +205,6 @@ etc/firmware/venus.b04
 etc/firmware/venus.mbn
 etc/firmware/venus.mdt
 
-# Perf
-bin/mpdecision
-vendor/lib/libqti-perfd-client.so
-
 # Qualcomm framework
 bin/irsc_util
 etc/permissions/qcrilhook.xml
@@ -270,11 +266,6 @@ vendor/lib/hw/activity_recognition.msm8974.so
 vendor/lib/hw/sensors.msm8974.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
-
-# Thermal
-bin/thermal-engine
-vendor/lib/libthermalclient.so
-vendor/lib/libthermalioctl.so
 
 # Time
 -app/TimeService/TimeService.apk

@@ -166,9 +166,6 @@ on boot
     # Allow QMUX daemon to assign port open wait time
     chown radio radio /sys/devices/virtual/hsicctl/hsicctl0/modem_wait
 
-    # communicate with mpdecision and thermald
-    mkdir /dev/socket/mpdecision 2770 system system
-
     # Prevents permission denied error for telephony
     chmod 0644 /proc/cmdline
 
@@ -344,12 +341,6 @@ service loc_launcher /system/bin/loc_launcher
     class late_start
     group gps inet net_raw qcom_diag net_admin wifi
 
-service mpdecision /system/bin/mpdecision --avg_comp
-   class late_start
-   user root
-   group root system
-   disabled
-
 service netmgrd /system/bin/netmgrd
     class main
     user root
@@ -389,11 +380,6 @@ service set_baseband /system/bin/sh /system/etc/set_baseband.sh
 
 on property:gsm.version.baseband=""
     start set_baseband
-
-service thermal-engine /system/bin/thermal-engine
-    class main
-    user root
-    group root
 
 service time_daemon /system/bin/time_daemon
     class late_start

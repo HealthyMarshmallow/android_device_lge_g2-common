@@ -114,7 +114,6 @@
 /dev/jpeg3                0660   system     camera
 /dev/adsprpc-smd          0664   system     media
 /dev/system_health_monitor 0640  radio      system
-/dev/msm_thermal_query    0640   radio      system
 /dev/msm_camera/*         0660   system     camera
 /dev/gemini/              0660   system     camera
 /dev/mercury0             0660   system     camera
