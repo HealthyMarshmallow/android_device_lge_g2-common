@@ -2,6 +2,12 @@ on early-init
     write /sys/block/mmcblk0/bdi/read_ahead_kb 512
 
 on enable-low-power
+    write /sys/kernel/msm_thermal/enabled 0
+    write /sys/kernel/msm_thermal/zone0 "1728000 45 43"
+    write /sys/kernel/msm_thermal/zone1 "1574400 50 47"
+    write /sys/kernel/msm_thermal/zone2 "1267200 55 53"
+    write /sys/kernel/msm_thermal/enabled 1
+
     write /sys/module/lpm_levels/enable_low_power/l2 4
     write /sys/module/msm_pm/modes/cpu0/power_collapse/suspend_enabled 1
     write /sys/module/msm_pm/modes/cpu1/power_collapse/suspend_enabled 1
@@ -107,3 +113,14 @@ on property:recovery.perf.mode=0
 
 on property:dev.bootcomplete=1
     setprop sys.io.scheduler "bfq"
+    write /sys/kernel/msm_thermal/enabled 0
+    write /sys/kernel/msm_thermal/zone0 "1728000 39 38"
+    write /sys/kernel/msm_thermal/zone1 "1574400 42 40"
+    write /sys/kernel/msm_thermal/zone2 "1497600 45 43"
+    write /sys/kernel/msm_thermal/zone3 "1267200 49 46"
+    write /sys/kernel/msm_thermal/zone4 "1190400 53 50"
+    write /sys/kernel/msm_thermal/zone5 "1036800 56 54"
+    write /sys/kernel/msm_thermal/zone6 "960000 62 60"
+    write /sys/kernel/msm_thermal/zone7 "729600 79 75"
+    write /sys/kernel/msm_thermal/sampling_ms 8000
+    write /sys/kernel/msm_thermal/enabled 1
