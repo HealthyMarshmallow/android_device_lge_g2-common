@@ -56,3 +56,13 @@ def AssertPartitionChecksum(info, partition, size, checksums):
                 for c in checksums]) +
             ' || abort("Invalid checksum for partition %s")' % (partition) +
             ');')
+
+def FullOTA_InstallEnd(info):
+  info.script.Print(" ");
+  info.script.Print("Powered by HealthyMarshmallow");
+  info.script.Print("       ______  ______        ");
+  info.script.Print("      /\___  \/\  ___\       ");
+  info.script.Print("      \/_/  /_\ \ \__ \      ");
+  info.script.Print("        /\_____\ \_____\     ");
+  info.script.Print("        \/_____/\/_____/     ");
+  info.script.Print(" ");
