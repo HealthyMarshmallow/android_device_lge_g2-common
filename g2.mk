@@ -110,10 +110,6 @@ PRODUCT_PACKAGES += \
 # Gello
 PRODUCT_PACKAGES += \
     Gello
-    
-# QuickCircle Case App
-PRODUCT_PACKAGES += \
-    QuickCircle
 
 # GPS
 PRODUCT_PACKAGES += \
@@ -218,7 +214,3 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
 
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
-
-# Glove mode
-PRODUCT_PACKAGES += \
-    GloveMode
