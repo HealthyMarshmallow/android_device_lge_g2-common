@@ -10,9 +10,3 @@ case "$product" in
         setprop gsm.version.baseband `strings /firmware/image/modem.b21 | grep "^M8974A-" | head -1`
         ;;
 esac
-
-# Force LP DHCP client
-legacy_dhcp=`settings get global legacy_dhcp_client`
-if [ "$legacy_dhcp" == "0" ]; then
-        settings put global legacy_dhcp_client 1
-fi
