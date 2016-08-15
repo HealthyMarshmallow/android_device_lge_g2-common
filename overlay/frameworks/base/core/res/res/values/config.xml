@@ -375,7 +375,7 @@
     <bool name="config_ui_blur_enabled">true</bool>
 
     <!-- Screen brightness when dozing. -->
-    <integer name="config_screenBrightnessDoze">30</integer>
+    <integer name="config_screenBrightnessDoze">20</integer>
 
     <!-- Dream of notifications -->
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
