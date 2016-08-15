@@ -102,7 +102,6 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    LGDoze \
     copybit.msm8974 \
     gralloc.msm8974 \
     hwcomposer.msm8974 \
