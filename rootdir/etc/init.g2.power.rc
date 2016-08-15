@@ -121,7 +121,7 @@ on property:sys.perf.profile=0
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "conservative"
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "conservative"
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "powersave"
-    write /sys/class/kgsl/kgsl-3d0/max_gpuclk 200000000
+    write /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_gpuclk 200000000
     write /sys/module/msm_hotplug/msm_enabled 1
 
 on property:sys.perf.profile=1
@@ -147,7 +147,7 @@ on property:sys.perf.profile=1
     write /sys/devices/system/cpu/cpufreq/interactive/sync_freq 1036800
     write /sys/devices/system/cpu/cpufreq/interactive/up_threshold_any_cpu_freq 1190400
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "msm-adreno-tz"
-    write /sys/class/kgsl/kgsl-3d0/max_gpuclk 200000000
+    write /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_gpuclk 200000000
     write /sys/module/msm_hotplug/msm_enabled 1
 
 on property:sys.perf.profile=2
@@ -161,4 +161,4 @@ on property:sys.perf.profile=2
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "performance"
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "performance"
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "performance"
-    write /sys/class/kgsl/kgsl-3d0/max_gpuclk 450000000
+    write /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_gpuclk 450000000
