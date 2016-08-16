@@ -177,8 +177,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nfc/nfcee_access.xml:system/etc/nfcee_access.xml \
 
 # Power
-PRODUCT_PACKAGES += \
-    power.g2
+# PRODUCT_PACKAGES += \
+#     power.g2
 
 # Qualcomm
 PRODUCT_PACKAGES += \
