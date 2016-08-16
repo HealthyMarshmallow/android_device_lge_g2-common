@@ -143,7 +143,7 @@ on property:sys.perf.profile=1
     write /sys/devices/system/cpu/cpufreq/interactive/sync_freq 1036800
     write /sys/devices/system/cpu/cpufreq/interactive/up_threshold_any_cpu_freq 1190400
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "msm-adreno-tz"
-    write /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_gpuclk 200000000
+    write /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_gpuclk 320000000
     write /sys/module/msm_hotplug/msm_enabled 1
 
 on property:sys.perf.profile=2
