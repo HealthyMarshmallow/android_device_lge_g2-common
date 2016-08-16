@@ -107,6 +107,8 @@ on property:dev.bootcomplete=1
     write /proc/sys/vm/dirty_ratio 40
     write /proc/sys/vm/dirty_background_ratio 20
     write /proc/sys/vm/vfs_cache_pressure 60
+    
+    write /sys/kernel/sched/gentle_fair_sleepers 0
 
 # Performance Profiles for G2 Power HAL
 on property:sys.perf.profile=0
