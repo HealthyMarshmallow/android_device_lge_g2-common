@@ -166,6 +166,8 @@ on boot
     # Allow QMUX daemon to assign port open wait time
     chown radio radio /sys/devices/virtual/hsicctl/hsicctl0/modem_wait
 
+    write /proc/sys/net/ipv6/conf/default/accept_ra_defrtr 1
+
     # Prevents permission denied error for telephony
     chmod 0644 /proc/cmdline
 
