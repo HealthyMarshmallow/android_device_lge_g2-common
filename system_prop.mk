@@ -73,7 +73,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.custom_ecc=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.radio.add_power_save=1 \
     persist.radio.apm_sim_not_pwdn=1 \
     ro.telephony.call_ring.multiple=0
 
