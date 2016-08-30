@@ -124,5 +124,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Wifi
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.data.large_tcp_window_size=true \
     wifi.interface=wlan0
