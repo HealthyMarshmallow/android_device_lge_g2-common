@@ -1,6 +1,3 @@
-on early-init
-    write /sys/block/mmcblk0/bdi/read_ahead_kb 128
-
 on enable-low-power
     write /sys/kernel/msm_thermal/enabled 0
     write /sys/kernel/msm_thermal/zone0 "1728000 45 43"
@@ -83,7 +80,6 @@ on property:recovery.perf.mode=0
 
 on property:dev.bootcomplete=1
     write /sys/block/mmcblk0/queue/scheduler "sio"
-    write /sys/block/mmcblk0/bdi/read_ahead_kb 512
     write /sys/kernel/msm_thermal/enabled 0
     write /sys/kernel/msm_thermal/zone0 "1958400 37 35"
     write /sys/kernel/msm_thermal/zone1 "1728000 39 38"
