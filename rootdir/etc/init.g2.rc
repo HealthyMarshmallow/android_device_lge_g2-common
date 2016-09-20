@@ -294,8 +294,10 @@ on boot
     write /sys/bus/msm_subsys/devices/subsys3/restart_level "related"
 
     # Adaptive LMK
+    write /sys/module/lowmemorykiller/parameters/minfree "18432,23040,24576,28672,31744,34816"
+    write /sys/module/lowmemorykiller/parameters/cost 48
     write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
-    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
+    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 73728
     write /sys/module/lowmemorykiller/parameters/debug_level 0
 
 on charger
