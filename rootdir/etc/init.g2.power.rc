@@ -129,7 +129,7 @@ on property:sys.perf.profile=1
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "darkness"
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "darkness"
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "msm-adreno-tz"
-    write /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_gpuclk 320000000
+    write /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_gpuclk 450000000
     write /sys/module/msm_hotplug/msm_enabled 1
 
 on property:sys.perf.profile=2
