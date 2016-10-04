@@ -26,10 +26,6 @@ TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := krait
 USE_CLANG_PLATFORM_BUILD := true
 
-# Compiler
-# L1/L2 cache size parameters by @JustArchi
-BOARD_GLOBAL_CFLAGS := --param l1-cache-size=16 --param l1-cache-line-size=16 --param l2-cache-size=2048
-
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := galbi
 TARGET_NO_BOOTLOADER := true
