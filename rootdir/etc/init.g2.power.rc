@@ -49,7 +49,7 @@ on charger
     write /sys/module/msm_pm/modes/cpu2/power_collapse/suspend_enabled 1
     write /sys/module/msm_pm/modes/cpu3/power_collapse/suspend_enabled 1
     write /sys/module/msm_pm/modes/cpu0/power_collapse/idle_enabled 1
-    write /sys/kernel/intelli_plug/intelli_plug_active 0
+    write /sys/module/msm_hotplug/msm_enabled 0
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
@@ -64,7 +64,7 @@ on charger
     write /sys/devices/system/cpu/cpu1/online 0
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
-    write /sys/kernel/intelli_plug/intelli_plug_active 1
+    write /sys/module/msm_hotplug/msm_enabled 1
 
 on boot
     trigger enable-low-power
@@ -100,8 +100,7 @@ on property:dev.bootcomplete=1
 
 # Performance Profiles for G2 Power HAL
 on property:sys.perf.profile=0
-    write /sys/kernel/intelli_plug/intelli_plug_active 0
-    write /sys/kernel/intelli_plug/cpus_boosted 1
+    write /sys/module/msm_hotplug/msm_enabled 0
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
@@ -112,11 +111,15 @@ on property:sys.perf.profile=0
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "conservative"
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "powersave"
     write /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_gpuclk 200000000
-    write /sys/kernel/intelli_plug/intelli_plug_active 1
+    write /sys/module/msm_hotplug/msm_enabled 1
 
 on property:sys.perf.profile=1
-    write /sys/kernel/intelli_plug/intelli_plug_active 0
-    write /sys/kernel/intelli_plug/cpus_boosted 2
+    write /sys/module/msm_hotplug/msm_enabled 0
+    write /sys/module/msm_hotplug/boost_lock_duration 2500
+    write /sys/module/msm_hotplug/down_lock_duration 750
+    write /sys/module/msm_hotplug/fast_lane_load 350
+    write /sys/module/msm_hotplug/update_rates 150
+    write /sys/module/msm_hotplug/history_size 5
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
@@ -136,11 +139,10 @@ on property:sys.perf.profile=1
     write /sys/devices/system/cpu/cpufreq/impulse/timer_rate 20000
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "msm-adreno-tz"
     write /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_gpuclk 450000000
-    write /sys/kernel/intelli_plug/intelli_plug_active 1
+    write /sys/module/msm_hotplug/msm_enabled 1
 
 on property:sys.perf.profile=2
-    write /sys/kernel/intelli_plug/intelli_plug_active 0
-    write /sys/kernel/intelli_plug/cpus_boosted 3
+    write /sys/module/msm_hotplug/msm_enabled 0
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
