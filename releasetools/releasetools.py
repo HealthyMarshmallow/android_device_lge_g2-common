@@ -59,10 +59,11 @@ def AssertPartitionChecksum(info, partition, size, checksums):
 
 def FullOTA_InstallBegin(info):
   info.script.Print(" ");
-  info.script.Print("Powered by HealthyMarshmallow");
+  info.script.Print("Powered by HealthyMarshmallowLite");
   info.script.Print("       ______  ______        ");
   info.script.Print("      /\___  \/\  ___\       ");
   info.script.Print("      \/_/  /_\ \ \__ \      ");
   info.script.Print("        /\_____\ \_____\     ");
   info.script.Print("        \/_____/\/_____/     ");
   info.script.Print(" ");
+

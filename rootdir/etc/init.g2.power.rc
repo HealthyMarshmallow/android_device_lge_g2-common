@@ -95,9 +95,6 @@ on property:dev.bootcomplete=1
     write /sys/kernel/msm_thermal/enabled 1
 
     setprop sys.perf.profile 1
-    setprop ro.vendor.extension_library ""
-    
-    write /sys/kernel/sched/gentle_fair_sleepers 0
 
 # Performance Profiles for G2 Power HAL
 on property:sys.perf.profile=0
