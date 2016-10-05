@@ -115,11 +115,6 @@ on property:sys.perf.profile=0
 
 on property:sys.perf.profile=1
     write /sys/module/msm_hotplug/msm_enabled 0
-    write /sys/module/msm_hotplug/boost_lock_duration 2500
-    write /sys/module/msm_hotplug/down_lock_duration 750
-    write /sys/module/msm_hotplug/fast_lane_load 350
-    write /sys/module/msm_hotplug/update_rates 150
-    write /sys/module/msm_hotplug/history_size 5
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu2/online 1
     write /sys/devices/system/cpu/cpu3/online 1
