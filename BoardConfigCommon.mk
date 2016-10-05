@@ -76,10 +76,6 @@ OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 
-# Encryption / Keymaster
-TARGET_HW_DISK_ENCRYPTION := true
-#TARGET_KEYMASTER_WAIT_FOR_QSEE := true
-
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
 
