@@ -83,16 +83,15 @@ on property:dev.bootcomplete=1
     write /sys/block/mmcblk0/queue/iosched/slice_idle 0
     write /sys/block/mmcblk0/bdi/read_ahead_kb 512
     write /sys/kernel/msm_thermal/enabled 0
-    write /sys/kernel/msm_thermal/zone0 "1728000 41 39"
+    write /sys/kernel/msm_thermal/zone0 "1958400 41 39"
     write /sys/kernel/msm_thermal/zone1 "1574400 43 42"
-    write /sys/kernel/msm_thermal/zone2 "1497600 46 44"
-    write /sys/kernel/msm_thermal/zone3 "1267200 49 47"
-    write /sys/kernel/msm_thermal/zone4 "1190400 53 50"
-    write /sys/kernel/msm_thermal/zone5 "960000 60 54"
-    write /sys/kernel/msm_thermal/zone6 "729600 70 61"
-    write /sys/kernel/msm_thermal/zone7 "652800 75 71"
+    write /sys/kernel/msm_thermal/zone2 "1574400 46 44"
+    write /sys/kernel/msm_thermal/zone3 "1497600 49 47"
+    write /sys/kernel/msm_thermal/zone4 "1267200 53 50"
+    write /sys/kernel/msm_thermal/zone5 "1190400 56 54"
+    write /sys/kernel/msm_thermal/zone6 "960000 60 57"
+    write /sys/kernel/msm_thermal/zone7 "729600 68 61"
     write /sys/kernel/msm_thermal/sampling_ms 8000
-    write /sys/kernel/msm_thermal/user_maxfreq 1958400
     write /sys/kernel/msm_thermal/enabled 1
 
     # CPU-Boost
