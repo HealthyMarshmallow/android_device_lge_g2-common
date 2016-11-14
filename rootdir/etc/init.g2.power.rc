@@ -79,8 +79,19 @@ on property:recovery.perf.mode=0
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
 
 on property:dev.bootcomplete=1
+    # I/O
     write /sys/block/mmcblk0/queue/scheduler "zen"
-    write /sys/block/mmcblk0/bdi/read_ahead_kb 512
+    write /sys/block/mmcblk0/bdi/read_ahead_kb 2048
+
+    # Memory
+    write /sys/module/lowmemorykiller/parameters/minfree "2560,4096,8192,16384,24576,32768"
+    write /sys/module/lowmemorykiller/parameters/cost 32
+    write /proc/sys/vm/dirty_expire_centisecs 200
+    write /proc/sys/vm/dirty_ratio 40
+    write /proc/sys/vm/dirty_background_ratio 5
+    write /proc/sys/vm/swappiness 0
+
+    # Thermal
     write /sys/kernel/msm_thermal/enabled 0
     write /sys/kernel/msm_thermal/zone0 "1958400 37 36"
     write /sys/kernel/msm_thermal/zone1 "1728000 39 38"
@@ -94,17 +105,16 @@ on property:dev.bootcomplete=1
     write /sys/kernel/msm_thermal/enabled 1
 
     # CPU-Boost
-    write /sys/module/cpu_boost/parameters/boost_ms 20
-    write /sys/module/cpu_boost/parameters/sync_threshold 1728000
-    write /sys/module/cpu_boost/parameters/input_boost_freq 1497600
+    write /sys/module/cpu_boost/parameters/boost_ms 0
+    write /sys/module/cpu_boost/parameters/sync_threshold 0
+    write /sys/module/cpu_boost/parameters/input_boost_freq 1190400
     write /sys/module/cpu_boost/parameters/input_boost_ms 40
 
     # MSM-Hotplug
-    write /sys/module/msm_hotplug/boost_lock_duration 350
-    write /sys/module/msm_hotplug/down_lock_duration 350
+    write /sys/module/msm_hotplug/boost_lock_duration 2500
+    write /sys/module/msm_hotplug/down_lock_duration 750
     write /sys/module/msm_hotplug/update_rates "200 5:100 50:50 350:200"
-    write /sys/module/msm_hotplug/fast_lane_load 100
-    write /sys/module/msm_hotplug/history_size 10
+    write /sys/module/msm_hotplug/fast_lane_load 400
 
     # KSM
     chown root system /sys/kernel/mm/ksm/pages_to_scan
@@ -118,7 +128,9 @@ on property:dev.bootcomplete=1
     write /sys/kernel/mm/ksm/deferred_timer 1
     write /sys/kernel/mm/ksm/run 0
 
-    write /sys/module/simple_gpu_algorithm/parameters/simple_gpu_activate 1
+    # CPU
+    write /sys/devices/system/cpu/sched_mc_power_savings 0
+    write /sys/module/workqueue/parameters/power_efficient Y
 
     setprop init.svc.mpdecision stopped
     setprop sys.perf.profile 1
@@ -135,6 +147,7 @@ on property:sys.perf.profile=0
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "conservative"
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "conservative"
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "powersave"
+    write /sys/module/simple_gpu_algorithm/parameters/simple_gpu_activate 1
     write /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_gpuclk 200000000
     write /sys/module/msm_hotplug/msm_enabled 1
 
@@ -148,15 +161,17 @@ on property:sys.perf.profile=1
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "interactive"
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "interactive"
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "interactive"
-    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "19000 1400000:39000 1700000:19000"
-    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 99
+    write /sys/devices/system/cpu/cpufreq/interactive/above_hispeed_delay "20000 1400000:40000 1700000:20000"
+    write /sys/devices/system/cpu/cpufreq/interactive/go_hispeed_load 90
     write /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq 1190400
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
     write /sys/devices/system/cpu/cpufreq/interactive/target_loads "85 1500000:90 1800000:70"
     write /sys/devices/system/cpu/cpufreq/interactive/min_sample_time 40000
     write /sys/devices/system/cpu/cpufreq/interactive/max_freq_hysteresis 100000
     write /sys/devices/system/cpu/cpufreq/interactive/timer_rate 30000
-    write /sys/class/kgsl/kgsl-3d0/devfreq/governor "msm-adreno-tz"
+    write /sys/devices/system/cpu/cpufreq/interactive/timer_slack 30000
+    write /sys/class/kgsl/kgsl-3d0/devfreq/governor "simple_ondemand"
+    write /sys/module/simple_gpu_algorithm/parameters/simple_gpu_activate 1
     write /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_gpuclk 450000000
     write /sys/module/msm_hotplug/msm_enabled 1
 
@@ -171,4 +186,5 @@ on property:sys.perf.profile=2
     write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "performance"
     write /sys/devices/system/cpu/cpu3/cpufreq/scaling_governor "performance"
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor "performance"
+    write /sys/module/simple_gpu_algorithm/parameters/simple_gpu_activate 0
     write /sys/devices/fdb00000.qcom,kgsl-3d0/kgsl/kgsl-3d0/max_gpuclk 450000000
