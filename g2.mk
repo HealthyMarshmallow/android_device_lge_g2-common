@@ -174,7 +174,7 @@ PRODUCT_COPY_FILES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.g2
+    power.msm8974
 
 # Qualcomm
 PRODUCT_PACKAGES += \
