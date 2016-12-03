@@ -69,7 +69,7 @@ on enable-low-power
     write /sys/module/msm_pm/modes/cpu2/retention/idle_enabled 1
     write /sys/module/msm_pm/modes/cpu3/retention/idle_enabled 1
     rm /data/system/default_values
-    setprop sys.io.scheduler "bfq"
+    setprop sys.io.scheduler "zen"
     start mpdecision
 
 on charger
