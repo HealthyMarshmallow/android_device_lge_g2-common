@@ -102,5 +102,5 @@ on property:recovery.perf.mode=0
 
 on property:dev.bootcomplete=1
     rm /data/system/default_values
-    setprop sys.io.scheduler "bfq"
+    setprop sys.io.scheduler "zen"
     start mpdecision
